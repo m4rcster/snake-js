@@ -2,7 +2,7 @@
 
 Play the famous snake game in your terminal.
 
-![alt text](https://user-images.githubusercontent.com/14793583/49650234-d8a48b00-fa2b-11e8-98af-81afbea999a9.png  = 250x)
+![alt text](https://user-images.githubusercontent.com/14793583/49650234-d8a48b00-fa2b-11e8-98af-81afbea999a9.png  =250x)
 
 ## Installation
 `npm install --save @marcster/snake-js`
