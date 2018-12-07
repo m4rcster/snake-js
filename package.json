@@ -1,5 +1,5 @@
 {
-  "name": "snake-js-terminal",
+  "name": "snake-js",
   "version": "1.0.0",
   "description": "Play snake with Node.js in the terminal",
   "main": "index.js",
