@@ -13,6 +13,7 @@ class Snake {
 
     this.speed = speed;
     this.frame = undefined;
+    this.isPlay = false;
     this.isOver = false;
 
     this.reset();
@@ -68,6 +69,9 @@ class Snake {
     })
 
     this.draw();
+
+    this.cb();
+
     this.frame = setTimeout(this.loop.bind(this), this.speed);
   }
 
@@ -104,7 +108,7 @@ class Snake {
       this.ui.cursor.goto(x, y).write(text);
     }
 
-    if(!this.frame && !this.isOver) {
+    if(!this.isPlay && !this.isOver) {
       let text = 'Press space to ▶️  or ⏸';
       let x = this.ui.center.x - text.length / 2;
       let y = this.ui.center.y + 1;
@@ -116,6 +120,7 @@ class Snake {
     if(this.isOver) {
       this.reset();
     } else if(this.frame === undefined) {
+      this.isPlay = true;
       this.loop();
     }
   }
@@ -123,14 +128,16 @@ class Snake {
   pause() {
     clearTimeout(this.frame);
     this.frame = undefined;
+    this.isPlay = false;
   }
 
   gameOver() {
     this.pause();
     this.isOver = true;
+    this.isPlay = false;
     this.snake.sprite = '💀';
     this.draw();
-    this.cb('dead');
+    this.cb('game over');
   }
 
   reset() {
