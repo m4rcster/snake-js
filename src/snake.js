@@ -1,10 +1,8 @@
 const Interface = require('./interface');
 const Box = require('./box');
 
-let step = 0;
-
 class Snake {
-  constructor(width, height, cb) {
+  constructor(width, height, cb, speed = 200) {
     this.grid = { x: 2, y: 1 };
     this.ui = new Interface();
 
@@ -13,7 +11,7 @@ class Snake {
 
     this.cb = cb;
 
-    this.speed = 200;
+    this.speed = speed;
     this.frame = undefined;
     this.isOver = false;
 
