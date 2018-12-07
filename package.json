@@ -1,0 +1,15 @@
+{
+  "name": "snake-terminal",
+  "version": "1.0.0",
+  "description": "Play snake with Node.js in the terminal",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marc Liew",
+  "license": "ISC",
+  "dependencies": {
+    "ansi": "^0.3.1"
+  }
+}
