@@ -121,7 +121,6 @@ class Snake {
   }
 
   pause() {
-    this.debug('pause');
     clearTimeout(this.frame);
     this.frame = undefined;
   }
@@ -190,11 +189,11 @@ class Snake {
       this.snake.dy = this.grid.y;
       return;
     }
-    if(key === 'space' && !this.playing) {
+    if(key === 'space' && this.frame === undefined) {
       this.start();
       return;
     }
-    if(key === 'space' && this.playing) {
+    if(key === 'space' && this.frame) {
       this.pause();
       return;
     }
