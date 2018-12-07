@@ -13,10 +13,14 @@ Play the famous snake game in your terminal.
 let Snake = require('@marcster/snake-js');
 
 // Snake(board width, board height, callback on loop end, speed in ms)
+
 let snake = new Snake(10, 10, () => {
+
     let score = snake.score;
+
     // parse score to string
     snake.debug('' + score);
+    
   }, 200);
 
 ```
