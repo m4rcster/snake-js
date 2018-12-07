@@ -1,6 +1,6 @@
 {
   "name": "@marcster/snake-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Play snake with Node.js in the terminal",
   "main": "index.js",
   "scripts": {
