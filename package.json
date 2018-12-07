@@ -1,14 +1,18 @@
 {
-  "name": "snake-js",
+  "name": "@marcster/snake-js",
   "version": "1.0.0",
   "description": "Play snake with Node.js in the terminal",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/index.js"
   },
   "author": "Marc Liew",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m4rcster/snake-js"
+  },
   "dependencies": {
     "ansi": "^0.3.1"
   }
