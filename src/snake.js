@@ -70,9 +70,7 @@ class Snake {
     })
 
     this.draw();
-    this.frame = setTimeout(() => { this.loop() }, this.speed);
-    this.debug('' + step);
-    step++;
+    this.frame = setTimeout(this.loop.bind(this), this.speed);
   }
 
   get score() {
@@ -119,13 +117,13 @@ class Snake {
   start() {
     if(this.isOver) {
       this.reset();
-    } else {
-      //this.frame = setInterval(() => this.loop(), this.speed);
+    } else if(this.frame === undefined) {
       this.loop();
     }
   }
 
   pause() {
+    this.debug('pause');
     clearTimeout(this.frame);
     this.frame = undefined;
   }
@@ -177,24 +175,30 @@ class Snake {
     if(key === 'left' && this.snake.dx === 0) {
       this.snake.dx = -this.grid.x;
       this.snake.dy = 0;
+      return;
     }
     if(key === 'up' && this.snake.dy === 0) {
       this.snake.dx = 0;
       this.snake.dy = -this.grid.y;
+      return;
     }
     if(key === 'right' && this.snake.dx === 0) {
       this.snake.dx = this.grid.x;
       this.snake.dy = 0;
+      return;
     }
     if(key === 'down' && this.snake.dy === 0) {
       this.snake.dx = 0;
       this.snake.dy = this.grid.y;
+      return;
     }
-    if(key === 'space' && this.frame === undefined) {
+    if(key === 'space' && !this.playing) {
       this.start();
+      return;
     }
-    if(key === 'space' && this.frame) {
+    if(key === 'space' && this.playing) {
       this.pause();
+      return;
     }
   }
 
